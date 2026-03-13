@@ -3,12 +3,21 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 
 function run(cmd, args, options = {}) {
-  const result = spawnSync(cmd, args, { stdio: "inherit", shell: true, ...options });
+  const result = spawnSync(cmd, args, { stdio: "inherit", shell: false, ...options });
   if (result.status !== 0) process.exit(result.status ?? 1);
 }
 
-function readStdout(cmd, args) {
-  const result = spawnSync(cmd, args, { encoding: "utf8", shell: true });
+function runNpm(args, options = {}) {
+  const result = spawnSync("npm", args, { stdio: "inherit", shell: true, ...options });
+  if (result.status !== 0) process.exit(result.status ?? 1);
+}
+
+function gitResult(args, options = {}) {
+  return spawnSync("git", args, { encoding: "utf8", shell: false, ...options });
+}
+
+function gitStdout(args, options = {}) {
+  const result = gitResult(args, options);
   if (result.status !== 0) return "";
   return (result.stdout ?? "").trim();
 }
@@ -39,9 +48,16 @@ function emptyDir(dir) {
   }
 }
 
+function safeRemoveWorktree(workDir) {
+  const result = gitResult(["worktree", "remove", "--force", workDir]);
+  if (result.status === 0) return;
+  fs.rmSync(workDir, { recursive: true, force: true });
+}
+
 function main() {
   const repoRoot = process.cwd();
-  const remoteUrl = process.env.PAGES_REMOTE_URL ?? readStdout("git", ["config", "--get", "remote.origin.url"]);
+  const remoteUrl =
+    process.env.PAGES_REMOTE_URL ?? gitStdout(["config", "--get", "remote.origin.url"]);
   const repoName =
     process.env.PAGES_REPO_NAME ?? (remoteUrl ? parseRepoNameFromRemoteUrl(remoteUrl) : "");
 
@@ -53,7 +69,7 @@ function main() {
   }
 
   const base = process.env.PAGES_BASE ?? `/${repoName}/`;
-  run("npm", ["run", "build"], { env: { ...process.env, VITE_BASE: base } });
+  runNpm(["run", "build"], { env: { ...process.env, VITE_BASE: base } });
 
   const distDir = path.join(repoRoot, "dist");
   if (!fs.existsSync(distDir)) {
@@ -65,29 +81,58 @@ function main() {
   fs.mkdirSync(path.dirname(workDir), { recursive: true });
 
   if (fs.existsSync(workDir)) {
-    run("git", ["worktree", "remove", "--force", workDir]);
+    safeRemoveWorktree(workDir);
   }
 
   const branchExists =
-    readStdout("git", ["show-ref", "--verify", "--quiet", "refs/heads/gh-pages"]) === "";
+    gitResult(["show-ref", "--verify", "--quiet", "refs/heads/gh-pages"]).status === 0;
   if (!branchExists) {
     run("git", ["branch", "gh-pages"]);
   }
 
-  run("git", ["worktree", "add", workDir, "gh-pages"]);
+  const addResult = gitResult(["worktree", "add", workDir, "gh-pages"]);
+  if (addResult.status !== 0) {
+    const orphan = gitResult(["worktree", "add", "--orphan", "gh-pages", workDir]);
+    if (orphan.status !== 0) {
+      process.stderr.write(orphan.stderr ?? "");
+      process.exit(orphan.status ?? 1);
+    }
+  }
 
   emptyDir(workDir);
   copyDir(distDir, workDir);
+  fs.writeFileSync(path.join(workDir, ".nojekyll"), "", "utf8");
 
-  const sha = readStdout("git", ["rev-parse", "--short", "HEAD"]);
+  const sha = gitStdout(["rev-parse", "--short", "HEAD"]);
   run("git", ["-C", workDir, "add", "-A"]);
-  run("git", ["-C", workDir, "commit", "-m", `Deploy ${sha || "site"}`]);
-  run("git", ["push", "origin", "gh-pages"]);
-  run("git", ["worktree", "remove", "--force", workDir]);
+  const changed = gitStdout(["-C", workDir, "status", "--porcelain"]);
+  if (!changed) {
+    process.stdout.write("No changes to publish (site output identical).\n");
+    safeRemoveWorktree(workDir);
+    return;
+  }
+
+  const commit = gitResult(["-C", workDir, "commit", "-m", `Deploy ${sha || "site"}`]);
+  if (commit.status !== 0) {
+    process.stderr.write(commit.stderr ?? "");
+    process.stderr.write(
+      '\nIf this is your first deploy, configure git identity:\n  git config --global user.name "Your Name"\n  git config --global user.email "you@example.com"\n',
+    );
+    process.exit(commit.status ?? 1);
+  }
+
+  const dryRun = process.env.PAGES_DRY_RUN === "1";
+  if (dryRun) {
+    process.stdout.write("Dry run enabled (PAGES_DRY_RUN=1). Skipping push.\n");
+  } else {
+    run("git", ["push", "origin", "gh-pages"]);
+  }
+  safeRemoveWorktree(workDir);
 
   const pagesUrl = process.env.PAGES_URL ?? `https://<username>.github.io/${repoName}/`;
-  process.stdout.write(`Published. If Pages is set to gh-pages branch, your site will be at: ${pagesUrl}\n`);
+  process.stdout.write(
+    `Published. If Pages is set to gh-pages branch, your site will be at: ${pagesUrl}\n`,
+  );
 }
 
 main();
-

@@ -53,6 +53,12 @@ If your remote repo name can’t be detected, set it explicitly:
 PAGES_REPO_NAME=Hyper-Vibe-Codeing-Hub npm run pages:publish
 ```
 
+Dry run (build + prepare branch, but do not push):
+
+```bash
+PAGES_DRY_RUN=1 npm run pages:publish
+```
+
 Optional custom domain:
 
 - Copy `public/CNAME.example` to `public/CNAME` and replace with your domain
