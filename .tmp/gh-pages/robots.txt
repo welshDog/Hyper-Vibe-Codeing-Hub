@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://welshDog.github.io/Hyper-Vibe-Codeing-Hub/sitemap.xml
