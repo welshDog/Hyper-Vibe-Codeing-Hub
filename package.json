@@ -15,6 +15,7 @@
     "test:run": "vitest run",
     "test:coverage": "vitest run --coverage",
     "test:snapshots": "vitest run schemas/contracts.test.ts",
+    "pages:publish": "node scripts/publish-pages.mjs",
     "hyper:ready": "node scripts/hyper-ready.mjs",
     "hyper:doctor": "node scripts/hyper-doctor.mjs",
     "hyper:reset": "node scripts/hyper-reset.mjs",

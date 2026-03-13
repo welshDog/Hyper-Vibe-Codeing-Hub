@@ -11,6 +11,10 @@ This repository is designed to be used as a **separate Trae workspace/profile** 
 
 https://welshDog.github.io/Hyper-Vibe-Codeing-Hub/
 
+If GitHub Actions is disabled on your account, you can still deploy via the `gh-pages` branch:
+
+- `npm run pages:publish` (see [docs/deployment/README.md](file:///c:/Users/Lyndz/Documents/trae_projects/Hyper%20Vibe%20Codeing%20Hub/docs/deployment/README.md))
+
 ## Highlights
 
 - Schema registry is the single source of truth (Zod + TypeScript).

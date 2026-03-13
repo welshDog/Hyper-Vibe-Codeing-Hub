@@ -30,6 +30,29 @@ Notes for Vite base path:
 - Pages serves at `/<repo-name>/`
 - The workflow builds with `VITE_BASE=/<repo-name>/` to make asset paths work correctly
 
+### If GitHub Actions is unavailable
+
+You can still deploy Pages for free without Actions by publishing a `gh-pages` branch.
+
+One-time setup:
+
+1. GitHub → Settings → Pages
+2. Source: Deploy from a branch
+3. Branch: `gh-pages` / root
+
+Publish:
+
+```bash
+npm install
+npm run pages:publish
+```
+
+If your remote repo name can’t be detected, set it explicitly:
+
+```bash
+PAGES_REPO_NAME=Hyper-Vibe-Codeing-Hub npm run pages:publish
+```
+
 Optional custom domain:
 
 - Copy `public/CNAME.example` to `public/CNAME` and replace with your domain
