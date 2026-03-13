@@ -1,0 +1,7 @@
+{
+  "assistant": { "provider": "openai", "model": "gpt-5.2" },
+  "noSecretsConfirmed": true,
+  "contextSources": ["RepoDigest"],
+  "promptsUsed": ["Bugfix loop"],
+  "verificationCommands": ["npm run lint", "npm run typecheck", "npm run test:coverage", "npm run build"]
+}

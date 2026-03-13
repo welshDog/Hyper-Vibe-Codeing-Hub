@@ -1,0 +1,9 @@
+{
+  "id": "job_lint",
+  "name": "Lint + Typecheck",
+  "stage": "lint_typecheck",
+  "timeoutMinutes": 10,
+  "runsOn": "ubuntu-latest",
+  "commands": ["npm run lint", "npm run typecheck"],
+  "artifacts": [{ "kind": "sarif", "path": "reports/eslint.sarif", "retentionDays": 14 }]
+}

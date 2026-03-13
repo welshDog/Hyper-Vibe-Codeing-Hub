@@ -1,0 +1,11 @@
+{
+  "id": "adr_001",
+  "title": "Use Zod as validation source of truth",
+  "status": "accepted",
+  "date": "2026-01-01T00:00:00.000Z",
+  "context": "Need a single runtime-validated schema for explorer and for config validation.",
+  "decision": "Adopt Zod schemas and infer types for compile-time safety.",
+  "consequences": "Schema registry can render shapes directly and validate examples.",
+  "alternatives": ["io-ts", "JSON Schema"],
+  "rollback": "Replace Zod schemas with JSON Schema generator and update registry renderer."
+}

@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-01-01T00:00:00.000Z",
+  "summary": "Commands, entrypoints, exclusions, and architectural notes for fast onboarding.",
+  "commands": {
+    "install": "npm install",
+    "lint": "npm run lint",
+    "test": "npm test",
+    "build": "npm run build",
+    "typecheck": "npm run typecheck"
+  },
+  "entrypoints": ["src/main.tsx"],
+  "architectureNotes": ["Keep loops fast: lint/typecheck/test before big refactors."],
+  "indexingExclusions": ["node_modules/", "dist/", "coverage/"]
+}

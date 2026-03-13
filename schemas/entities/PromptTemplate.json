@@ -1,0 +1,9 @@
+{
+  "id": "prompt_bugfix",
+  "name": "Bugfix loop",
+  "purpose": "Reproduce, test, fix, verify with minimal scope.",
+  "prompt": "Reproduce the bug. Add/adjust tests that fail. Implement the smallest fix. Run lint/typecheck/tests. Summarize changes and rollback.",
+  "tags": ["bugfix", "safety"],
+  "noSecretsReminder": true,
+  "createdAt": "2026-01-01T00:00:00.000Z"
+}

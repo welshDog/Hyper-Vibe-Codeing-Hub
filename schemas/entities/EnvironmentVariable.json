@@ -1,0 +1,8 @@
+{
+  "name": "OPENAI_API_KEY",
+  "scope": "local",
+  "required": true,
+  "secret": true,
+  "credentialRef": { "kind": "windowsCredentialManager", "reference": "hyper-vibe/openai" },
+  "description": "API key for AI pair-programming actions."
+}

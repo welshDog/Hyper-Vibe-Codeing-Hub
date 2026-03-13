@@ -1,0 +1,8 @@
+{
+  "id": "exp_2026_01_01",
+  "hypothesis": "A schema explorer reduces onboarding time and improves consistency.",
+  "branch": "exp/schema-explorer",
+  "startedAt": "2026-01-01T00:00:00.000Z",
+  "metrics": ["PR cycle time", "lint critical count", "onboarding duration"],
+  "verdict": "pending"
+}

@@ -1,0 +1,9 @@
+{
+  "os": "windows",
+  "containerized": false,
+  "runtimes": [
+    { "language": "typescript", "version": "20.17.0" },
+    { "language": "python", "version": "3.12.3" }
+  ],
+  "packageManagers": ["npm", "pnpm", "uv"]
+}

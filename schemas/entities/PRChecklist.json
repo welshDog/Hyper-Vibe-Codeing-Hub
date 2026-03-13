@@ -1,0 +1,10 @@
+{
+  "lintPassed": true,
+  "testsPassed": true,
+  "coveragePercent": 82.4,
+  "buildUnder2Min": true,
+  "noCriticalLintWarnings": true,
+  "rollbackPlanIncluded": true,
+  "docsUpdated": true,
+  "reviewerApproved": false
+}

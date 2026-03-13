@@ -1,0 +1,5 @@
+{
+  "kind": "coverage",
+  "path": "coverage/",
+  "retentionDays": 14
+}

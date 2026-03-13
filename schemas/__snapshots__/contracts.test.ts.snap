@@ -1,0 +1,1767 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > ADR 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "alternatives",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "string",
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "consequences",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "context",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "date",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "decision",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "id",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "rollback",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "status",
+      "optional": false,
+      "value": {
+        "kind": "enum",
+        "values": [
+          "proposed",
+          "accepted",
+          "rejected",
+          "deprecated",
+        ],
+      },
+    },
+    {
+      "key": "title",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > AIArtifacts 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "assistant",
+      "optional": false,
+      "value": {
+        "kind": "object",
+        "properties": [
+          {
+            "key": "model",
+            "optional": false,
+            "value": {
+              "kind": "string",
+            },
+          },
+          {
+            "key": "provider",
+            "optional": false,
+            "value": {
+              "kind": "string",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "key": "contextSources",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "string",
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "noSecretsConfirmed",
+      "optional": false,
+      "value": {
+        "kind": "literal",
+        "value": true,
+      },
+    },
+    {
+      "key": "notes",
+      "optional": true,
+      "value": {
+        "inner": {
+          "kind": "string",
+        },
+        "kind": "optional",
+      },
+    },
+    {
+      "key": "promptsUsed",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "string",
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "verificationCommands",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "string",
+        },
+        "kind": "array",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > ArtifactOutput 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "kind",
+      "optional": false,
+      "value": {
+        "kind": "enum",
+        "values": [
+          "coverage",
+          "junit",
+          "sarif",
+          "build",
+          "logs",
+        ],
+      },
+    },
+    {
+      "key": "path",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "retentionDays",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > Branch 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "base",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "createdAt",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "name",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "owner",
+      "optional": true,
+      "value": {
+        "inner": {
+          "kind": "string",
+        },
+        "kind": "optional",
+      },
+    },
+    {
+      "key": "type",
+      "optional": false,
+      "value": {
+        "kind": "enum",
+        "values": [
+          "main",
+          "feature",
+          "fix",
+          "chore",
+          "experiment",
+          "release",
+        ],
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > CIJob 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "artifacts",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "object",
+          "properties": [
+            {
+              "key": "kind",
+              "optional": false,
+              "value": {
+                "kind": "enum",
+                "values": [
+                  "coverage",
+                  "junit",
+                  "sarif",
+                  "build",
+                  "logs",
+                ],
+              },
+            },
+            {
+              "key": "path",
+              "optional": false,
+              "value": {
+                "kind": "string",
+              },
+            },
+            {
+              "key": "retentionDays",
+              "optional": false,
+              "value": {
+                "kind": "number",
+              },
+            },
+          ],
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "commands",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "string",
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "id",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "name",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "runsOn",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "stage",
+      "optional": false,
+      "value": {
+        "kind": "enum",
+        "values": [
+          "setup",
+          "lint_typecheck",
+          "test_coverage",
+          "build",
+        ],
+      },
+    },
+    {
+      "key": "timeoutMinutes",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > CIPipeline 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "caching",
+      "optional": false,
+      "value": {
+        "kind": "object",
+        "properties": [
+          {
+            "key": "enabled",
+            "optional": false,
+            "value": {
+              "kind": "boolean",
+            },
+          },
+          {
+            "key": "strategy",
+            "optional": true,
+            "value": {
+              "inner": {
+                "kind": "enum",
+                "values": [
+                  "lockfile",
+                  "content_hash",
+                  "custom",
+                ],
+              },
+              "kind": "optional",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "key": "id",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "jobs",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "object",
+          "properties": [
+            {
+              "key": "artifacts",
+              "optional": false,
+              "value": {
+                "item": {
+                  "kind": "object",
+                  "properties": [
+                    {
+                      "key": "kind",
+                      "optional": false,
+                      "value": {
+                        "kind": "enum",
+                        "values": [
+                          "coverage",
+                          "junit",
+                          "sarif",
+                          "build",
+                          "logs",
+                        ],
+                      },
+                    },
+                    {
+                      "key": "path",
+                      "optional": false,
+                      "value": {
+                        "kind": "string",
+                      },
+                    },
+                    {
+                      "key": "retentionDays",
+                      "optional": false,
+                      "value": {
+                        "kind": "number",
+                      },
+                    },
+                  ],
+                },
+                "kind": "array",
+              },
+            },
+            {
+              "key": "commands",
+              "optional": false,
+              "value": {
+                "item": {
+                  "kind": "string",
+                },
+                "kind": "array",
+              },
+            },
+            {
+              "key": "id",
+              "optional": false,
+              "value": {
+                "kind": "string",
+              },
+            },
+            {
+              "key": "name",
+              "optional": false,
+              "value": {
+                "kind": "string",
+              },
+            },
+            {
+              "key": "runsOn",
+              "optional": false,
+              "value": {
+                "kind": "string",
+              },
+            },
+            {
+              "key": "stage",
+              "optional": false,
+              "value": {
+                "kind": "enum",
+                "values": [
+                  "setup",
+                  "lint_typecheck",
+                  "test_coverage",
+                  "build",
+                ],
+              },
+            },
+            {
+              "key": "timeoutMinutes",
+              "optional": false,
+              "value": {
+                "kind": "number",
+              },
+            },
+          ],
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "provider",
+      "optional": false,
+      "value": {
+        "kind": "enum",
+        "values": [
+          "github",
+          "gitlab",
+          "azure",
+          "other",
+        ],
+      },
+    },
+    {
+      "key": "targetBranch",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > EnvironmentVariable 1`] = `
+{
+  "kind": "union",
+  "options": [
+    {
+      "kind": "object",
+      "properties": [
+        {
+          "key": "credentialRef",
+          "optional": false,
+          "value": {
+            "kind": "object",
+            "properties": [
+              {
+                "key": "kind",
+                "optional": false,
+                "value": {
+                  "kind": "enum",
+                  "values": [
+                    "1password",
+                    "bitwarden",
+                    "windowsCredentialManager",
+                    "ciSecret",
+                    "other",
+                  ],
+                },
+              },
+              {
+                "key": "reference",
+                "optional": false,
+                "value": {
+                  "kind": "string",
+                },
+              },
+            ],
+          },
+        },
+        {
+          "key": "description",
+          "optional": true,
+          "value": {
+            "inner": {
+              "kind": "string",
+            },
+            "kind": "optional",
+          },
+        },
+        {
+          "key": "example",
+          "optional": true,
+          "value": {
+            "inner": {
+              "kind": "string",
+            },
+            "kind": "optional",
+          },
+        },
+        {
+          "key": "name",
+          "optional": false,
+          "value": {
+            "kind": "string",
+          },
+        },
+        {
+          "key": "required",
+          "optional": false,
+          "value": {
+            "kind": "boolean",
+          },
+        },
+        {
+          "key": "scope",
+          "optional": false,
+          "value": {
+            "kind": "enum",
+            "values": [
+              "local",
+              "ci",
+              "dev",
+              "stage",
+              "prod",
+            ],
+          },
+        },
+        {
+          "key": "secret",
+          "optional": false,
+          "value": {
+            "kind": "literal",
+            "value": true,
+          },
+        },
+      ],
+    },
+    {
+      "kind": "object",
+      "properties": [
+        {
+          "key": "defaultValue",
+          "optional": true,
+          "value": {
+            "inner": {
+              "kind": "string",
+            },
+            "kind": "optional",
+          },
+        },
+        {
+          "key": "description",
+          "optional": true,
+          "value": {
+            "inner": {
+              "kind": "string",
+            },
+            "kind": "optional",
+          },
+        },
+        {
+          "key": "example",
+          "optional": true,
+          "value": {
+            "inner": {
+              "kind": "string",
+            },
+            "kind": "optional",
+          },
+        },
+        {
+          "key": "name",
+          "optional": false,
+          "value": {
+            "kind": "string",
+          },
+        },
+        {
+          "key": "required",
+          "optional": false,
+          "value": {
+            "kind": "boolean",
+          },
+        },
+        {
+          "key": "scope",
+          "optional": false,
+          "value": {
+            "kind": "enum",
+            "values": [
+              "local",
+              "ci",
+              "dev",
+              "stage",
+              "prod",
+            ],
+          },
+        },
+        {
+          "key": "secret",
+          "optional": true,
+          "value": {
+            "inner": {
+              "kind": "literal",
+              "value": false,
+            },
+            "kind": "optional",
+          },
+        },
+      ],
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > ExperimentLog 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "branch",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "endedAt",
+      "optional": true,
+      "value": {
+        "inner": {
+          "kind": "string",
+        },
+        "kind": "optional",
+      },
+    },
+    {
+      "key": "hypothesis",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "id",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "metrics",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "string",
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "promotionPRId",
+      "optional": true,
+      "value": {
+        "inner": {
+          "kind": "string",
+        },
+        "kind": "optional",
+      },
+    },
+    {
+      "key": "resultSummary",
+      "optional": true,
+      "value": {
+        "inner": {
+          "kind": "string",
+        },
+        "kind": "optional",
+      },
+    },
+    {
+      "key": "startedAt",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "verdict",
+      "optional": false,
+      "value": {
+        "kind": "enum",
+        "values": [
+          "pending",
+          "keep",
+          "revert",
+        ],
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > FolderEntry 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "excludeFromIndexing",
+      "optional": false,
+      "value": {
+        "kind": "boolean",
+      },
+    },
+    {
+      "key": "path",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "purpose",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > PRChecklist 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "buildUnder2Min",
+      "optional": false,
+      "value": {
+        "kind": "boolean",
+      },
+    },
+    {
+      "key": "coveragePercent",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "docsUpdated",
+      "optional": false,
+      "value": {
+        "kind": "boolean",
+      },
+    },
+    {
+      "key": "lintPassed",
+      "optional": false,
+      "value": {
+        "kind": "boolean",
+      },
+    },
+    {
+      "key": "noCriticalLintWarnings",
+      "optional": false,
+      "value": {
+        "kind": "boolean",
+      },
+    },
+    {
+      "key": "reviewerApproved",
+      "optional": false,
+      "value": {
+        "kind": "boolean",
+      },
+    },
+    {
+      "key": "rollbackPlanIncluded",
+      "optional": false,
+      "value": {
+        "kind": "boolean",
+      },
+    },
+    {
+      "key": "testsPassed",
+      "optional": false,
+      "value": {
+        "kind": "boolean",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > Project 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "createdAt",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "defaultBranch",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "id",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "name",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "qualityGates",
+      "optional": false,
+      "value": {
+        "kind": "object",
+        "properties": [
+          {
+            "key": "blockOnTypeErrors",
+            "optional": false,
+            "value": {
+              "kind": "literal",
+              "value": true,
+            },
+          },
+          {
+            "key": "buildMaxSeconds",
+            "optional": false,
+            "value": {
+              "kind": "number",
+            },
+          },
+          {
+            "key": "coverageMinPercent",
+            "optional": false,
+            "value": {
+              "kind": "number",
+            },
+          },
+          {
+            "key": "criticalLintMax",
+            "optional": false,
+            "value": {
+              "kind": "literal",
+              "value": 0,
+            },
+          },
+        ],
+      },
+    },
+    {
+      "key": "repoDigest",
+      "optional": true,
+      "value": {
+        "inner": {
+          "kind": "object",
+          "properties": [
+            {
+              "key": "architectureNotes",
+              "optional": false,
+              "value": {
+                "item": {
+                  "kind": "string",
+                },
+                "kind": "array",
+              },
+            },
+            {
+              "key": "commands",
+              "optional": false,
+              "value": {
+                "kind": "object",
+                "properties": [
+                  {
+                    "key": "build",
+                    "optional": false,
+                    "value": {
+                      "kind": "string",
+                    },
+                  },
+                  {
+                    "key": "install",
+                    "optional": false,
+                    "value": {
+                      "kind": "string",
+                    },
+                  },
+                  {
+                    "key": "lint",
+                    "optional": false,
+                    "value": {
+                      "kind": "string",
+                    },
+                  },
+                  {
+                    "key": "test",
+                    "optional": false,
+                    "value": {
+                      "kind": "string",
+                    },
+                  },
+                  {
+                    "key": "typecheck",
+                    "optional": false,
+                    "value": {
+                      "kind": "string",
+                    },
+                  },
+                ],
+              },
+            },
+            {
+              "key": "entrypoints",
+              "optional": false,
+              "value": {
+                "item": {
+                  "kind": "string",
+                },
+                "kind": "array",
+              },
+            },
+            {
+              "key": "generatedAt",
+              "optional": false,
+              "value": {
+                "kind": "string",
+              },
+            },
+            {
+              "key": "indexingExclusions",
+              "optional": false,
+              "value": {
+                "item": {
+                  "kind": "string",
+                },
+                "kind": "array",
+              },
+            },
+            {
+              "key": "summary",
+              "optional": false,
+              "value": {
+                "kind": "string",
+              },
+            },
+          ],
+        },
+        "kind": "optional",
+      },
+    },
+    {
+      "key": "repoUrl",
+      "optional": true,
+      "value": {
+        "inner": {
+          "kind": "string",
+        },
+        "kind": "optional",
+      },
+    },
+    {
+      "key": "stack",
+      "optional": false,
+      "value": {
+        "kind": "object",
+        "properties": [
+          {
+            "key": "containerized",
+            "optional": false,
+            "value": {
+              "kind": "boolean",
+            },
+          },
+          {
+            "key": "os",
+            "optional": false,
+            "value": {
+              "kind": "enum",
+              "values": [
+                "windows",
+                "linux",
+                "mac",
+              ],
+            },
+          },
+          {
+            "key": "packageManagers",
+            "optional": false,
+            "value": {
+              "item": {
+                "kind": "enum",
+                "values": [
+                  "npm",
+                  "pnpm",
+                  "yarn",
+                  "uv",
+                  "pip",
+                  "poetry",
+                  "dotnet",
+                  "maven",
+                  "gradle",
+                ],
+              },
+              "kind": "array",
+            },
+          },
+          {
+            "key": "runtimes",
+            "optional": false,
+            "value": {
+              "item": {
+                "kind": "object",
+                "properties": [
+                  {
+                    "key": "language",
+                    "optional": false,
+                    "value": {
+                      "kind": "enum",
+                      "values": [
+                        "typescript",
+                        "python",
+                        "dotnet",
+                        "java",
+                        "go",
+                        "rust",
+                        "other",
+                      ],
+                    },
+                  },
+                  {
+                    "key": "version",
+                    "optional": false,
+                    "value": {
+                      "kind": "string",
+                    },
+                  },
+                ],
+              },
+              "kind": "array",
+            },
+          },
+        ],
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > PromptTemplate 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "createdAt",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "id",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "name",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "noSecretsReminder",
+      "optional": false,
+      "value": {
+        "kind": "literal",
+        "value": true,
+      },
+    },
+    {
+      "key": "prompt",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "purpose",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "tags",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "string",
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "updatedAt",
+      "optional": true,
+      "value": {
+        "inner": {
+          "kind": "string",
+        },
+        "kind": "optional",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > PullRequest 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "aiArtifacts",
+      "optional": false,
+      "value": {
+        "kind": "object",
+        "properties": [
+          {
+            "key": "assistant",
+            "optional": false,
+            "value": {
+              "kind": "object",
+              "properties": [
+                {
+                  "key": "model",
+                  "optional": false,
+                  "value": {
+                    "kind": "string",
+                  },
+                },
+                {
+                  "key": "provider",
+                  "optional": false,
+                  "value": {
+                    "kind": "string",
+                  },
+                },
+              ],
+            },
+          },
+          {
+            "key": "contextSources",
+            "optional": false,
+            "value": {
+              "item": {
+                "kind": "string",
+              },
+              "kind": "array",
+            },
+          },
+          {
+            "key": "noSecretsConfirmed",
+            "optional": false,
+            "value": {
+              "kind": "literal",
+              "value": true,
+            },
+          },
+          {
+            "key": "notes",
+            "optional": true,
+            "value": {
+              "inner": {
+                "kind": "string",
+              },
+              "kind": "optional",
+            },
+          },
+          {
+            "key": "promptsUsed",
+            "optional": false,
+            "value": {
+              "item": {
+                "kind": "string",
+              },
+              "kind": "array",
+            },
+          },
+          {
+            "key": "verificationCommands",
+            "optional": false,
+            "value": {
+              "item": {
+                "kind": "string",
+              },
+              "kind": "array",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "key": "author",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "checklist",
+      "optional": false,
+      "value": {
+        "kind": "object",
+        "properties": [
+          {
+            "key": "buildUnder2Min",
+            "optional": false,
+            "value": {
+              "kind": "boolean",
+            },
+          },
+          {
+            "key": "coveragePercent",
+            "optional": false,
+            "value": {
+              "kind": "number",
+            },
+          },
+          {
+            "key": "docsUpdated",
+            "optional": false,
+            "value": {
+              "kind": "boolean",
+            },
+          },
+          {
+            "key": "lintPassed",
+            "optional": false,
+            "value": {
+              "kind": "boolean",
+            },
+          },
+          {
+            "key": "noCriticalLintWarnings",
+            "optional": false,
+            "value": {
+              "kind": "boolean",
+            },
+          },
+          {
+            "key": "reviewerApproved",
+            "optional": false,
+            "value": {
+              "kind": "boolean",
+            },
+          },
+          {
+            "key": "rollbackPlanIncluded",
+            "optional": false,
+            "value": {
+              "kind": "boolean",
+            },
+          },
+          {
+            "key": "testsPassed",
+            "optional": false,
+            "value": {
+              "kind": "boolean",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "key": "createdAt",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "description",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "id",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "links",
+      "optional": true,
+      "value": {
+        "inner": {
+          "kind": "object",
+          "properties": [
+            {
+              "key": "ciRunUrl",
+              "optional": true,
+              "value": {
+                "inner": {
+                  "kind": "string",
+                },
+                "kind": "optional",
+              },
+            },
+            {
+              "key": "docsUrl",
+              "optional": true,
+              "value": {
+                "inner": {
+                  "kind": "string",
+                },
+                "kind": "optional",
+              },
+            },
+            {
+              "key": "issueUrl",
+              "optional": true,
+              "value": {
+                "inner": {
+                  "kind": "string",
+                },
+                "kind": "optional",
+              },
+            },
+          ],
+        },
+        "kind": "optional",
+      },
+    },
+    {
+      "key": "mergedAt",
+      "optional": true,
+      "value": {
+        "inner": {
+          "kind": "string",
+        },
+        "kind": "optional",
+      },
+    },
+    {
+      "key": "sourceBranch",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "status",
+      "optional": false,
+      "value": {
+        "kind": "enum",
+        "values": [
+          "draft",
+          "open",
+          "merged",
+          "closed",
+        ],
+      },
+    },
+    {
+      "key": "targetBranch",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "title",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > QualityGates 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "blockOnTypeErrors",
+      "optional": false,
+      "value": {
+        "kind": "literal",
+        "value": true,
+      },
+    },
+    {
+      "key": "buildMaxSeconds",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "coverageMinPercent",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "criticalLintMax",
+      "optional": false,
+      "value": {
+        "kind": "literal",
+        "value": 0,
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > RepoDigest 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "architectureNotes",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "string",
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "commands",
+      "optional": false,
+      "value": {
+        "kind": "object",
+        "properties": [
+          {
+            "key": "build",
+            "optional": false,
+            "value": {
+              "kind": "string",
+            },
+          },
+          {
+            "key": "install",
+            "optional": false,
+            "value": {
+              "kind": "string",
+            },
+          },
+          {
+            "key": "lint",
+            "optional": false,
+            "value": {
+              "kind": "string",
+            },
+          },
+          {
+            "key": "test",
+            "optional": false,
+            "value": {
+              "kind": "string",
+            },
+          },
+          {
+            "key": "typecheck",
+            "optional": false,
+            "value": {
+              "kind": "string",
+            },
+          },
+        ],
+      },
+    },
+    {
+      "key": "entrypoints",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "string",
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "generatedAt",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+    {
+      "key": "indexingExclusions",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "string",
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "summary",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > StackConfig 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "containerized",
+      "optional": false,
+      "value": {
+        "kind": "boolean",
+      },
+    },
+    {
+      "key": "os",
+      "optional": false,
+      "value": {
+        "kind": "enum",
+        "values": [
+          "windows",
+          "linux",
+          "mac",
+        ],
+      },
+    },
+    {
+      "key": "packageManagers",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "enum",
+          "values": [
+            "npm",
+            "pnpm",
+            "yarn",
+            "uv",
+            "pip",
+            "poetry",
+            "dotnet",
+            "maven",
+            "gradle",
+          ],
+        },
+        "kind": "array",
+      },
+    },
+    {
+      "key": "runtimes",
+      "optional": false,
+      "value": {
+        "item": {
+          "kind": "object",
+          "properties": [
+            {
+              "key": "language",
+              "optional": false,
+              "value": {
+                "kind": "enum",
+                "values": [
+                  "typescript",
+                  "python",
+                  "dotnet",
+                  "java",
+                  "go",
+                  "rust",
+                  "other",
+                ],
+              },
+            },
+            {
+              "key": "version",
+              "optional": false,
+              "value": {
+                "kind": "string",
+              },
+            },
+          ],
+        },
+        "kind": "array",
+      },
+    },
+  ],
+}
+`;
+
+exports[`schemas/contracts > validates each canonical payload and snapshots schema shape > WeeklyMetrics 1`] = `
+{
+  "kind": "object",
+  "properties": [
+    {
+      "key": "buildTimeSecondsP50",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "buildTimeSecondsP95",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "coveragePercent",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "criticalLintCount",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "meanTimeToGreenMinutes",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "prCycleTimeHoursP50",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "rollbackCount",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "totalLintWarnings",
+      "optional": false,
+      "value": {
+        "kind": "number",
+      },
+    },
+    {
+      "key": "weekOf",
+      "optional": false,
+      "value": {
+        "kind": "string",
+      },
+    },
+  ],
+}
+`;

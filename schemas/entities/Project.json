@@ -1,0 +1,39 @@
+{
+  "id": "proj_hvc",
+  "name": "Hyper Vibe Coding Hub",
+  "repoUrl": "https://example.com/org/hvc.git",
+  "defaultBranch": "main",
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "stack": {
+    "os": "windows",
+    "containerized": false,
+    "runtimes": [
+      { "language": "typescript", "version": "20.17.0" },
+      { "language": "python", "version": "3.12.3" }
+    ],
+    "packageManagers": ["npm", "pnpm", "uv"]
+  },
+  "qualityGates": {
+    "buildMaxSeconds": 120,
+    "coverageMinPercent": 80,
+    "criticalLintMax": 0,
+    "blockOnTypeErrors": true
+  },
+  "repoDigest": {
+    "generatedAt": "2026-01-01T00:00:00.000Z",
+    "summary": "Polyglot dev workflow system with AI-assisted build and validation loops.",
+    "commands": {
+      "install": "npm install",
+      "lint": "npm run lint",
+      "test": "npm test",
+      "build": "npm run build",
+      "typecheck": "npm run typecheck"
+    },
+    "entrypoints": ["src/main.tsx"],
+    "architectureNotes": [
+      "Schema registry drives explorer UI.",
+      "Zod schemas act as validation source of truth."
+    ],
+    "indexingExclusions": ["node_modules/", "dist/", "coverage/"]
+  }
+}

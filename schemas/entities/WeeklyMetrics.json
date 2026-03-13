@@ -1,0 +1,11 @@
+{
+  "weekOf": "2026-01-01",
+  "buildTimeSecondsP50": 58,
+  "buildTimeSecondsP95": 108,
+  "coveragePercent": 82.4,
+  "criticalLintCount": 0,
+  "totalLintWarnings": 3,
+  "meanTimeToGreenMinutes": 19,
+  "prCycleTimeHoursP50": 6.4,
+  "rollbackCount": 0
+}

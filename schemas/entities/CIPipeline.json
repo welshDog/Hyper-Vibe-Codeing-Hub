@@ -1,0 +1,47 @@
+{
+  "id": "ci_default",
+  "provider": "github",
+  "targetBranch": "main",
+  "jobs": [
+    {
+      "id": "job_setup",
+      "name": "Setup + Cache",
+      "stage": "setup",
+      "timeoutMinutes": 10,
+      "runsOn": "ubuntu-latest",
+      "commands": ["npm ci"],
+      "artifacts": []
+    },
+    {
+      "id": "job_lint",
+      "name": "Lint + Typecheck",
+      "stage": "lint_typecheck",
+      "timeoutMinutes": 10,
+      "runsOn": "ubuntu-latest",
+      "commands": ["npm run lint", "npm run typecheck"],
+      "artifacts": [{ "kind": "sarif", "path": "reports/eslint.sarif", "retentionDays": 14 }]
+    },
+    {
+      "id": "job_test",
+      "name": "Unit Tests + Coverage",
+      "stage": "test_coverage",
+      "timeoutMinutes": 15,
+      "runsOn": "ubuntu-latest",
+      "commands": ["npm run test:coverage"],
+      "artifacts": [
+        { "kind": "coverage", "path": "coverage/", "retentionDays": 14 },
+        { "kind": "junit", "path": "reports/junit.xml", "retentionDays": 14 }
+      ]
+    },
+    {
+      "id": "job_build",
+      "name": "Build",
+      "stage": "build",
+      "timeoutMinutes": 10,
+      "runsOn": "ubuntu-latest",
+      "commands": ["npm run build"],
+      "artifacts": [{ "kind": "build", "path": "dist/", "retentionDays": 14 }]
+    }
+  ],
+  "caching": { "enabled": true, "strategy": "lockfile" }
+}

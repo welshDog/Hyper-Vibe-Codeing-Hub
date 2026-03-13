@@ -1,0 +1,27 @@
+{
+  "id": "pr_1024",
+  "title": "Add interactive schema explorer",
+  "description": "Introduce typed model registry and a navigable explorer UI.",
+  "author": "lyndz",
+  "sourceBranch": "feat/schema-explorer",
+  "targetBranch": "main",
+  "status": "open",
+  "createdAt": "2026-01-01T00:00:00.000Z",
+  "checklist": {
+    "lintPassed": true,
+    "testsPassed": true,
+    "coveragePercent": 82.4,
+    "buildUnder2Min": true,
+    "noCriticalLintWarnings": true,
+    "rollbackPlanIncluded": true,
+    "docsUpdated": true,
+    "reviewerApproved": false
+  },
+  "aiArtifacts": {
+    "assistant": { "provider": "openai", "model": "gpt-5.2" },
+    "noSecretsConfirmed": true,
+    "contextSources": ["RepoDigest"],
+    "promptsUsed": ["Bugfix loop"],
+    "verificationCommands": ["npm run lint", "npm run typecheck", "npm run test:coverage", "npm run build"]
+  }
+}

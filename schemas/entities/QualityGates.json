@@ -1,0 +1,6 @@
+{
+  "buildMaxSeconds": 120,
+  "coverageMinPercent": 80,
+  "criticalLintMax": 0,
+  "blockOnTypeErrors": true
+}
