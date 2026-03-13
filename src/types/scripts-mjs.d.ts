@@ -6,4 +6,7 @@ declare module "*.mjs" {
   export const isPortFree: any;
   export const colorize: any;
   export const resolveInsideRoot: any;
+  export const createPublisher: any;
+  export const parseOwnerFromRemoteUrl: any;
+  export const parseRepoNameFromRemoteUrl: any;
 }

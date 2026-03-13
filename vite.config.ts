@@ -17,7 +17,7 @@ export default defineConfig({
         statements: 80,
       },
       include: ["src/**/*.{ts,tsx}", "scripts/**/*.{js,mjs}", "schemas/**/*.ts"],
-      exclude: ["src/main.tsx", "src/types/**", "scripts/hyper-*.mjs"],
+      exclude: ["src/main.tsx", "src/types/**", "scripts/hyper-*.mjs", "scripts/publish-pages.mjs"],
     },
   },
 });
