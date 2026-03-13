@@ -4,6 +4,13 @@ Schema-first workflow hub for teams: a typed data model + an interactive explore
 
 This repository is designed to be used as a **separate Trae workspace/profile** (“SchemaHub”) so agents index the schema/contracts context without polluting your main product repo.
 
+[![Deploy](https://github.com/welshDog/Hyper-Vibe-Codeing-Hub/actions/workflows/deploy.yml/badge.svg)](https://github.com/welshDog/Hyper-Vibe-Codeing-Hub/actions/workflows/deploy.yml)
+[![Lighthouse](https://github.com/welshDog/Hyper-Vibe-Codeing-Hub/actions/workflows/lighthouse.yml/badge.svg)](https://github.com/welshDog/Hyper-Vibe-Codeing-Hub/actions/workflows/lighthouse.yml)
+
+## 🚀 Live Demo
+
+https://welshDog.github.io/Hyper-Vibe-Codeing-Hub/
+
 ## Highlights
 
 - Schema registry is the single source of truth (Zod + TypeScript).
@@ -17,6 +24,8 @@ Add screenshots to `docs/images/`:
 
 - `docs/images/schema-explorer.png` (main explorer view)
 - `docs/images/validation.png` (example validation output)
+
+![Schema Explorer](docs/images/schema-explorer.png)
 
 ## Navigation
 
@@ -99,3 +108,7 @@ npm run test:snapshots -- -u
 - Data model schemas: [hvc.ts](file:///c:/Users/Lyndz/Documents/trae_projects/Hyper%20Vibe%20Codeing%20Hub/src/model/hvc.ts)
 - Schema registry + examples: [schemaRegistry.ts](file:///c:/Users/Lyndz/Documents/trae_projects/Hyper%20Vibe%20Codeing%20Hub/src/schemaRegistry.ts)
 - Explorer UI: [App.tsx](file:///c:/Users/Lyndz/Documents/trae_projects/Hyper%20Vibe%20Codeing%20Hub/src/ui/App.tsx)
+
+---
+
+Made with ❤️ and GitHub Pages.

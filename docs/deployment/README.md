@@ -16,18 +16,24 @@ npm run preview
 
 ## GitHub Pages (Example)
 
-This repo does not include a Pages workflow by default.
+This repo includes a zero-cost GitHub Pages pipeline:
 
-Typical approach:
+- [deploy.yml](file:///c:/Users/Lyndz/Documents/trae_projects/Hyper%20Vibe%20Codeing%20Hub/.github/workflows/deploy.yml)
 
-1. Build the Vite app on CI
-2. Publish `dist/` to GitHub Pages
+One-time repo setup:
 
-If you want, add a workflow that:
+1. GitHub → Settings → Pages
+2. Build and deployment → Source: GitHub Actions
 
-- runs `npm ci`
-- runs `npm run build`
-- publishes `dist/`
+Notes for Vite base path:
+
+- Pages serves at `/<repo-name>/`
+- The workflow builds with `VITE_BASE=/<repo-name>/` to make asset paths work correctly
+
+Optional custom domain:
+
+- Copy `public/CNAME.example` to `public/CNAME` and replace with your domain
+- Configure DNS and set the domain in GitHub Pages settings
 
 ## Environment Variables
 
@@ -38,4 +44,3 @@ If you add integrations later:
 - keep secrets out of source control
 - use `.env` locally
 - use your platform’s secret store in CI
-

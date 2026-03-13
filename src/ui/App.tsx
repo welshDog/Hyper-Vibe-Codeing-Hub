@@ -311,6 +311,18 @@ export function App() {
           </div>
         )}
       </main>
+
+      <footer
+        style={{
+          position: "fixed",
+          bottom: 10,
+          right: 12,
+          fontSize: 12,
+          color: "#64748b",
+        }}
+      >
+        Made with ❤️ and GitHub Pages
+      </footer>
     </div>
   );
 }
